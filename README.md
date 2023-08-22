@@ -5,5 +5,6 @@ Oppgaver for 2ITB
 | -------- | ------- |
 | 34 – 36  | Git og terminal-bruk​ + React Intro    |
 | 36 - 37  | Grunnleggende programmering og brukergrensesnitt     |
-| 38 - 40  | Utforskning I NodeJS. Lage en enkel database-app.​ Utforske ulike databaser    |
+| 38 - 39  | Utforskning I NodeJS. Lage en enkel database-app.​ Utforske ulike databaser    |
+| 40  | Høstferie    |
 
