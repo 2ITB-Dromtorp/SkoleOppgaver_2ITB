@@ -13,7 +13,7 @@ lokale repository og github repository. "git status" vil fortelle deg neste steg
 
 Men vanlig prosedyre er som følger:
 
-- Git add (filnavn.extension)
-- git commit (filnavn.extension) -m 'beskjed om hvilken endring du har gjort'
+- git add .    
+- git commit -a -m 'beskjed om hvilken endring du har gjort'
 - git push
 
