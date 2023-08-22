@@ -12,4 +12,10 @@ Usage: "cd mappe-du vil til/"
 
 Usage: Lists all the elements in the folder
 
+## cd .. - change directory backwards 
 
+Usage: Go back to parent folder or previous folder
+
+## mkdir - make directory
+
+Usage: mkdir newfolder
