@@ -1,4 +1,4 @@
-#Terminal kommandoer:
+# Terminal kommandoer:
 
 ##pwd - present working directory
 
