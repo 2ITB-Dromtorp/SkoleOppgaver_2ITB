@@ -1,9 +1,9 @@
 # SkoleOppgaver_2ITB
 Oppgaver for 2ITB
 
-| Month    | Savings |
+| Uke    | Savings |
 | -------- | ------- |
-| January  | $250    |
-| February | $80     |
+| 34 – 36  | Git og terminal-bruk​ + React Intro    |
+| 36 - 37  | $80     |
 | March    | $420    |
 
