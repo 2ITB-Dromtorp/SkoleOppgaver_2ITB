@@ -1,7 +1,7 @@
 # SkoleOppgaver_2ITB
 Oppgaver for 2ITB
 
-| Uke    | Savings |
+| Uke    | Innhold |
 | -------- | ------- |
 | 34 – 36  | Git og terminal-bruk​ + React Intro    |
 | 36 - 37  | Grunnleggende programmering og brukergrensesnitt     |
