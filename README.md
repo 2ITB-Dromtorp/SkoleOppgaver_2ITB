@@ -7,4 +7,6 @@ Oppgaver for 2ITB
 | 36 - 39  | Grunnleggende programmering og brukergrensesnitt     |
 | 40  | Høstferie    |
 | 40 -  | Utforskning I NodeJS. Lage en enkel database-app.​ Utforske ulike databaser    |
+| 42 -  | Praksis    |
+| 46 - Jul | Samleprosjekt før jul med hva vi har lært   |
 
