@@ -7,8 +7,8 @@ import Profile from './ImageEx';
 function App() {
 
   let isLoggedIn;
-  let content;
-  isLoggedIn = false;
+  let content = <h1> Overskrift </h1>;
+  isLoggedIn = true;
 
   if (isLoggedIn) {
     content = <MyButton />;
