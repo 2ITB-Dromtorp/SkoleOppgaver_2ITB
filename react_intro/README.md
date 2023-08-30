@@ -1,4 +1,5 @@
 # React introduksjon
 
-## Les denne dokumentasjonen og lek deg litt frem: 
-### https://react.dev/learn
+## Lag et react prosjekt: https://create-react-app.dev/
+
+## React tutorial: https://react.dev/learn

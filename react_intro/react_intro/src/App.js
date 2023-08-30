@@ -22,6 +22,7 @@ function App() {
       <header className="App-header">
         
         <h1> React Intro </h1>
+        
         {content}
 
       </header>
