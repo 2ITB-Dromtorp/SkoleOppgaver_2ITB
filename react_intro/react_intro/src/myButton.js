@@ -45,16 +45,20 @@ function Uselist() {
 
   return <ul>{listItems}</ul>
   
-}  
+}
 
 export default function MyButton() {
 
+  function UseListfunction() {
+    console.log('Her kan jeg manipulere noe for å bruke i komponenten');
+  }
   
     return (
       <div>
         <h1>Welcome to my app</h1>
         <button className='button' onClick={clickButton}>I'm a button</button>
         <Uselist />
+        {UseListfunction}
       </div>
     );
   }
