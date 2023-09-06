@@ -8,14 +8,10 @@ export default function DigitalClock() {
     let ss = clock.getSeconds();
 
     const [currentTime, newTime] = useState(new Date);
-    
-    
 
     setInterval(() => {
-        console.log('Hello');
+        newTime(new Date);
     }, 1000);
-
-    console.log(hh, mm, ss);
 
     return (
         <div className="App">
