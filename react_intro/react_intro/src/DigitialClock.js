@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function DigitalClock() {
 
@@ -9,15 +9,26 @@ export default function DigitalClock() {
 
     const [currentTime, newTime] = useState(new Date);
 
-    setInterval(() => {
+
+//useEffect fires when state change. Fire when renders.
+useEffect(() => {
+    
+    const myInterval = setInterval(() => {
+
         newTime(new Date);
+
     }, 1000);
 
+    return () => clearInterval(myInterval);
+
+
+});
+    
     return (
         <div className="App">
             <header className="App-header">
         
-            <h1> {console.log(currentTime)} </h1>
+            <h1> {currentTime.getHours()}:{currentTime.getMinutes()}:{currentTime.getSeconds()} {console.log(currentTime)} </h1>
 
             </header>
         </div>
