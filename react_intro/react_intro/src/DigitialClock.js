@@ -9,7 +9,6 @@ export default function DigitalClock() {
 
     const [currentTime, newTime] = useState(new Date);
 
-
 //useEffect fires when state change. Fire when renders.
 useEffect(() => {
     

@@ -5,10 +5,14 @@ import App from './App';
 import DigitalClock from './DigitialClock';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
 
-    <DigitalClock />
+import { BrowserRouter as Router } from "react-router-dom";
+import App from "./App";
+
+root.render(
+    <Router>
+        <DigitalClock />
+    </Router>
 
 );
 
