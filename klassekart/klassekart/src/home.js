@@ -34,21 +34,21 @@ export default function Home() {
         <div className='box'>
 
             <div className='sitteplasser'> 
-            <Elev name="Mattis"/>
-            <Elev name="Alva"/>
-            <Elev name="Silas"/>
+                <Elev name="Mattis"/>
+                <Elev name="Alva"/>
+                <Elev name="Silas"/>
+              </div>
+
+            <div className='sitteplasser'> 
+                <Elev name="Axel"/>
+                <Elev name="Vetle"/>
+                <Elev name="Kristoffer"/>
               </div>
 
               <div className='sitteplasser'> 
-              <Elev name="Axel"/>
-              <Elev name="Vetle"/>
-              <Elev name="Kristoffer"/>
-              </div>
-
-              <div className='sitteplasser'> 
-              <Elev name="Johannes"/>
-              <Elev name="Elias"/>
-              <Elev name="Matheo"/>
+                <Elev name="Johannes"/>
+                <Elev name="Elias"/>
+                <Elev name="Matheo"/>
               </div>
             
           </div>
