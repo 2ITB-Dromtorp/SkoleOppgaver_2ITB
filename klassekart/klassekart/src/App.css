@@ -37,19 +37,17 @@
   }
 }
 
-.tositteplasser {
+.sitteplasser {
   display: flex;
-  width: 100px;
 }
 
-.tresitteplasser {
-  display: flex;
-}
 
 .elev {
   padding: 2em;
-  margin: 2em;
+  width: 100px;
+  margin-top: 2em;
   border: solid white 2px;
+  font-size: 2em;
 }
 
 .container {

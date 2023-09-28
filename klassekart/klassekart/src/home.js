@@ -11,19 +11,18 @@ export default function Home() {
 
             <div className='box'>
 
-              <div className='tositteplasser'>
-                <Elev />
-                <Elev />
+              <div className='sitteplasser'>
+                <Elev name="Andreas"/>
+                <Elev name="Ahmad"/>
               </div>
 
-              <div className='tositteplasser'> 
-                <Elev />
-                <Elev />
+              <div className='sitteplasser'> 
+                <Elev name="Philip"/>
               </div>
 
-              <div className='tositteplasser'> 
-                <Elev />
-                <Elev />
+              <div className='sitteplasser'> 
+                <Elev name="Gabriel"/>
+                <Elev name="Theodor"/>
               </div>
 
             </div>
@@ -34,22 +33,22 @@ export default function Home() {
 
         <div className='box'>
 
-            <div className='tresitteplasser'> 
-                <Elev />
-                <Elev />
-                <Elev />
+            <div className='sitteplasser'> 
+            <Elev name="Mattis"/>
+            <Elev name="Alva"/>
+            <Elev name="Silas"/>
               </div>
 
-              <div className='tresitteplasser'> 
-                <Elev />
-                <Elev />
-                <Elev />
+              <div className='sitteplasser'> 
+              <Elev name="Axel"/>
+              <Elev name="Vetle"/>
+              <Elev name="Kristoffer"/>
               </div>
 
-              <div className='tresitteplasser'> 
-                <Elev />
-                <Elev />
-                <Elev />
+              <div className='sitteplasser'> 
+              <Elev name="Johannes"/>
+              <Elev name="Elias"/>
+              <Elev name="Matheo"/>
               </div>
             
           </div>
