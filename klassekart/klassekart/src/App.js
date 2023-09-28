@@ -1,64 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { Profile } from './Profile';
+import Home from './home';
 
 function App() {
 
   return (
 
+    <>
+       <Routes>
+          <Route path="/" element={<Home />} />
+          
+       </Routes>
+    </>
 
-        <div className="container">
-
-        <div className='leftside'>
-
-            <div className='box'>
-
-              <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-
-              <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-
-              <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-
-            </div>
-          </div>
-            
-
-        <div className='rightside'>
-
-        <div className='box'>
-
-            <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-
-              <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-
-              <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-              </div>
-            
-          </div>
-
-          </div>
-
-
-        </div>
+        
 
   );
 }
