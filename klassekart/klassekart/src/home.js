@@ -1,6 +1,8 @@
 import './App.css';
+import Elev from './Elev';
 
 export default function Home() {
+
     return (
 
         <div className="container">
@@ -9,19 +11,19 @@ export default function Home() {
 
             <div className='box'>
 
-              <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+              <div className='tositteplasser'>
+                <Elev />
+                <Elev />
               </div>
 
               <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+                <Elev />
+                <Elev />
               </div>
 
               <div className='tositteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+                <Elev />
+                <Elev />
               </div>
 
             </div>
@@ -33,21 +35,21 @@ export default function Home() {
         <div className='box'>
 
             <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+                <Elev />
+                <Elev />
+                <Elev />
               </div>
 
               <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+                <Elev />
+                <Elev />
+                <Elev />
               </div>
 
               <div className='tresitteplasser'> 
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
-                <div className='elev'> Elev </div>
+                <Elev />
+                <Elev />
+                <Elev />
               </div>
             
           </div>
