@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en"
+	><head
+		><meta charset="UTF-8" /><meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/><meta
+			name="viewport"
+			content="width=device-width,initial-scale=1"
+		/><title>Learn the basics of HTML, CSS, JS</title
+		><link rel="preconnect" href="https://fonts.googleapis.com" /><link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/><link
+			href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;800&family=Lora:wght@400;700&family=Merriweather:wght@400;900&family=Montserrat:wght@400;800&family=Noto+Sans+Mono:wght@400;800&display=swap"
+			rel="stylesheet"
+		/><style>
+			:root {
+				--border-radius: 0.2rem;
+				--border: 0.1rem solid #1f222a;
+				--background-primary: #14161b;
+				--background-secondary: #1c1e25;
+				--background-error: #ff260e33;
+				--background-code: #14e47c22;
+				--background-link: #138dff29;
+				--text-focus: #fff;
+				--text-unfocus: #9cbbb1;
+				--text-placeholder: #2b2e38;
+				--text-primary: #ddd;
+				--text-secondary: #fff;
+				--text-error: #ff260e;
+				--text-code: #14e47c;
+				--text-link: #138dff;
+				--font-monospace: 'Jetbrains Mono', 'Noto Sans Mono', 'Cousine',
+					monospace;
+				--font-sans-serif: 'Inter', sans-serif;
+				--font-serif: 'Lora', 'Merriweather', serif;
+			}
+			* {
+				outline: 0 !important;
+			}
+			body,
+			html {
+				background-color: var(--background-primary);
+				padding: 0 2rem 2rem 2rem;
+				margin: 0;
+				max-width: 100vw;
+				display: flex;
+				flex-direction: column;
+				scroll-snap-type: y proximity;
+				scroll-snap-stop: always;
+				font-family: var(--font-sans-serif);
+			}
+			.row-item {
+				width: 60rem;
+				max-width: 100%;
+				margin: auto;
+				min-height: calc(100vh - 5rem);
+				scroll-snap-align: start;
+			}
+			.row-item:last-child {
+				min-height: calc(100vh);
+			}
+			.separator {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				margin: 1.5rem 0;
+			}
+			.separator * {
+				line-height: 2rem;
+				padding: 0;
+				margin: 0;
+			}
+			hr {
+				border: none;
+				border-top: var(--border) !important;
+				width: 100%;
+			}
+			.task-container {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				background-color: var(--background-secondary);
+				padding: 2rem;
+				border-radius: var(--border-radius);
+				-webkit-border-radius: var(--border-radius);
+				-moz-border-radius: var(--border-radius);
+				-ms-border-radius: var(--border-radius);
+				-o-border-radius: var(--border-radius);
+			}
+			h2 {
+				font-size: xx-large;
+				margin: 0 0 1rem 0;
+				padding: 0;
+				color: var(--text-secondary);
+			}
+			h3 {
+				font-size: x-large;
+				margin: 0 0 1rem 0;
+				padding: 0;
+				color: var(--text-primary);
+			}
+			ul {
+				list-style: square;
+			}
+			li {
+				line-height: 2rem;
+				font-size: large;
+				color: var(--text-secondary);
+			}
+			.error-message,
+			a,
+			code {
+				border-radius: var(--border-radius);
+				-webkit-border-radius: var(--border-radius);
+				-moz-border-radius: var(--border-radius);
+				-ms-border-radius: var(--border-radius);
+				-o-border-radius: var(--border-radius);
+				padding: 0.2em 0.3em;
+				margin: 0;
+				white-space: nowrap;
+				font-size: 0.8em;
+				font-weight: 400;
+				font-family: var(--font-monospace);
+			}
+			a {
+				text-decoration: none;
+				color: var(--text-link);
+				background-color: var(--background-link);
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			code {
+				color: var(--text-code);
+				background-color: var(--background-code);
+			}
+			.editor {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+			.input,
+			input {
+				font-family: var(--font-monospace);
+				font-size: large;
+				color: var(--text-primary);
+				width: calc(100% - 2rem);
+				padding: 0.75rem 1rem;
+				background-color: var(--background-primary);
+				border: none;
+				border-radius: var(--border-radius);
+				-webkit-border-radius: var(--border-radius);
+				-moz-border-radius: var(--border-radius);
+				-ms-border-radius: vfar(--border-radius);
+				-o-border-radius: var(--border-radius);
+			}
+			.error-message {
+				width: min-content;
+				max-height: 0;
+				opacity: 0;
+				padding: 0.3em 0.4em;
+				font-size: 0.9rem !important;
+				color: var(--text-error);
+				background: var(--background-error);
+				transition: all 0.2s ease-out;
+				-webkit-transition: all 0.2s ease-out;
+				-moz-transition: all 0.2s ease-out;
+				-ms-transition: all 0.2s ease-out;
+				-o-transition: all 0.2s ease-out;
+			}
+			#htmlOutput {
+				justify-content: center;
+			}
+			#cssOutput {
+				flex-direction: column;
+				padding: 2rem;
+				width: calc(100% - 4rem);
+			}
+			.row-2 {
+				display: flex;
+				background-color: var(--background-primary);
+				border-radius: var(--border-radius);
+				width: 100%;
+				height: minmax(1rem, fit-content);
+				overflow: hidden;
+				-webkit-border-radius: var(--border-radius);
+				-moz-border-radius: var(--border-radius);
+				-ms-border-radius: var(--border-radius);
+				-o-border-radius: var(--border-radius);
+			}
+			.row-2 img,
+			.row-2 span {
+				font-family: var(--font-monospace);
+				font-size: x-large;
+				color: var(--text-placeholder);
+			}
+			.row-2 span {
+				margin: 2rem;
+			}
+			.row-2 img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+			.row-2 h1,
+			.row-2 h2,
+			.row-2 h3,
+			.row-2 h4,
+			.row-2 h5,
+			.row-2 h6 {
+				margin: 0 0 1rem 0;
+				padding: 0;
+				color: var(--text-primary);
+			}
+			#css-task-1-h1 {
+				font-size: xx-large;
+			}
+			#css-task-1-h2 {
+				font-size: x-large;
+			}
+			#css-task-1-h3 {
+				font-size: larger;
+			}
+			#css-task-1-h4 {
+				font-size: normal;
+			}
+			#css-task-1-h5 {
+				font-size: small;
+			}
+			#css-task-1-h6 {
+				font-size: x-small;
+			}
+			#css-task-2-h2 {
+				margin: 0;
+				font-family: var(--font-sans-serif);
+			}
+			#css-task-2-p {
+				color: var(--text-primary);
+				font-size: 1.1em;
+				font-family: var(--font-serif);
+			}
+		</style></head
+	><body
+		><script>
+			function tryHTML(t) {
+				var e = document.getElementById('htmlOutput'),
+					i = document.getElementById(t.getAttribute('data-e')),
+					s = t.value.trim();
+				if ('img' == t.getAttribute('data-p')) {
+					var r = s.replace(s.substr(0, Math.min(s.length, 9)), '');
+					r.match(/"|">/g) && (r = r.replace(/"|>/g, ''));
+					var a = ('<img src="' + r + '">').substr(0, s.length);
+					'<img src="">' == s.replace(r, '')
+						? ((output =
+								'<img src="' +
+								r +
+								'" alt="Dette funket ikke. Sjekk at URLen lenker direkte til et bilde.">'),
+						  (i.style.opacity = '0%'),
+						  (i.style.maxHeight = '0rem'))
+						: '' == s || s == a
+						? ((output =
+								'<span>Bildet vises her hvis koden og URLen er gyldig.</span>'),
+						  (i.style.opacity = '0%'),
+						  (i.style.maxHeight = '0rem'))
+						: ((output =
+								'<span>Bildet vises her hvis koden og URLen er gyldig.</span>'),
+						  (i.style.opacity = '100%'),
+						  (i.style.maxHeight = '1.5rem')),
+						(e.innerHTML = output);
+				}
+			}
+			function tryCSS(t) {
+				var e = document.getElementById(t.getAttribute('data-e')),
+					s = t.getAttribute('data-p'),
+					r = /^\s*(h[1-6]{1}|p)\s*{\s*}\s*$/;
+				const a = t.innerHTML.replace(/&nbsp;|<br>/gi, '').split(/}/g);
+				switch (s) {
+					case 'font-size':
+						var n =
+								/^\s*h[1-6]{1}\s*{\s*font-size:\s*\d+(px|rem|em|ch|cm|mm|in|%|pt|pc|ex|vw|vh|vmin|vmax)\s*;\s*}\s*$/,
+							m = !1;
+						for (i = 0; i < a.length - 1; i++)
+							if (((a[i] = a[i] + '}'), a[i].match(n))) {
+								var o = a[i].match(/h[1-6]{1}/),
+									c = a[i].match(
+										/\d+(px|rem|em|ch|cm|mm|in|%|pt|pc|ex|vw|vh|vmin|vmax)/g
+									);
+								document.getElementById(
+									'css-task-1-' + o
+								).style.fontSize = c;
+							} else
+								a[i].replace(/\s+|\n+/g, '').match(r) ||
+									(m = !0);
+						m
+							? ((e.style.opacity = '100%'),
+							  (e.style.maxHeight = '1.5rem'))
+							: ((e.style.opacity = '0%'),
+							  (e.style.maxHeight = '0rem'));
+						break;
+					case 'font-family':
+						(n =
+							/^\s*(h2|p)\s*{\s*font-family:\s*('Lora'|'Merriweather'|'Inter'|'Montserrat'|'Noto Sans Mono'|'JetBrains Mono'|'Cousine'|sans-serif|serif|monospace|cursive|fantasy|unset|,|\s+)+\s*;\s*}\s*$/),
+							(m = !1);
+						for (i = 0; i < a.length - 1; i++)
+							if (((a[i] = a[i] + '}'), a[i].match(n))) {
+								(o = a[i].trim().match(/^h2|^p/g)),
+									(c = a[i].match(
+										/'Lora'|'Merriweather'|'Inter'|'Montserrat'|'Noto Sans Mono'|'JetBrains Mono'|'Cousine'|sans-serif|serif|monospace|cursive|fantasy|unset/g,
+										''
+									));
+								document.getElementById(
+									'css-task-2-' + o
+								).style.fontFamily = c;
+							} else m = !0;
+						m
+							? ((e.style.opacity = '100%'),
+							  (e.style.maxHeight = '1.5rem'))
+							: ((e.style.opacity = '0%'),
+							  (e.style.maxHeight = '0rem'));
+				}
+			}
+			function checkLang(t) {
+				var e = t.getAttribute('data-l');
+				'html' == e
+					? tryHTML(t)
+					: 'css' == e
+					? tryCSS(t)
+					: 'js' == e && tryJS(t);
+			}
+			var inputArray = document.querySelectorAll('input, .input');
+			for (i = 0; i < inputArray.length; i++)
+				inputArray[i].addEventListener('input', checkLang(this));
+		</script>
+		<div class="row-item"
+			><div class="separator"><hr /><h3>1.1</h3><hr /></div
+			><div class="task-container"
+				><div class="row-1"
+					><div class="explanation"
+						><h2>Sett inn bilde med HTML</h2
+						><ul
+							><li
+								>Vi bruker <code>&lt;img&gt;</code>-tag for å
+								sette inn bilder.</li
+							><li
+								>I <code>&lt;img&gt;</code>-taggen trenger vi
+								<code>src="lenke til bilde"</code> for å si
+								hvilket bilde vi vil vise på nettsiden.</li
+							><li
+								>F.eks.
+								<code
+									>&lt;img
+									src="https://www.example.com/img/test.jpg"&gt;</code
+								></li
+							></ul
+						></div
+					><div class="editor"
+						><span id="html-task-1" class="error-message"
+							>Invalid kode; sjekk eksempelet ovenfor.</span
+						>
+						<input
+							type="text"
+							id="htmlImg"
+							oninput="checkLang(this)"
+							data-l="html"
+							data-p="img"
+							data-e="html-task-1"
+							placeholder="Skriv HTML-kode her" /></div></div
+				><div class="row-2" id="htmlOutput"
+					><span
+						>Bildet vises her hvis koden og URLen er gyldig.</span
+					></div
+				></div
+			></div
+		><div class="row-item"
+			><div class="separator"><hr /><h3>2.1</h3><hr /></div
+			><!-- Skriv gyldig CSS for font størrelse til overskrifter. --><div
+				class="task-container"
+				><div class="row-1"
+					><div class="explanation"
+						><h2>Endre skriftstørrelse på overskrifter med CSS</h2
+						><ul
+							><li
+								>Når vi lager overskrifter i HTML brukes
+								<code>&lt;h1&gt;</code>,
+								<code>&lt;h2&gt;</code>,
+								<code>&lt;h3&gt;</code>,
+								<code>&lt;h4&gt;</code>,
+								<code>&lt;h5&gt;</code> og
+								<code>&lt;h6&gt;</code>.</li
+							><li
+								><code>&lt;h1&gt;</code> er for
+								hovedoverskrifter, resten er
+								underoverskrifter.</li
+							><li
+								>Alle HTML-elementer har en default verdi, for å
+								gi de et annet utseende bruker vi CSS.</li
+							><li
+								>For å endre skiftstørrelse må vi endre
+								<code>font-size</code> sin verdi til noe annet
+								en det den som default.</li
+							><li
+								>Vi begynner med å definere en
+								<a
+									href="https://css-tricks.com/css-ruleset-terminology/"
+									>selector</a
+								>, i dette tilfellet er alle listet
+								nedenfor.</li
+							><li
+								>Deretter skriver vi inn hvilken egenskap vi vil
+								endre verdien til. Her blir det
+								<code>font-size</code>, og til slutt gir vi
+								egenskapen en verdi.</li
+							><li
+								><a
+									href="https://www.w3schools.com/CSSref/css_units.asp"
+									>CSS har mange forskjellige måleenheter</a
+								>
+								man kan bruke, noen passer bedre enn andre. De
+								vi har er:<ul
+									><li><code>cm</code> (centimeter)</li
+									><li><code>mm</code> (millimeter)</li
+									><li><code>in</code> (tommer)</li
+									><li
+										><code>px</code> (piksler, 1px =
+										1in/96)</li
+									><li
+										><code>pt</code> (punkter, 1pt =
+										1in/72)</li
+									><li><code>pc</code> (picas, 1pc = 12pt)</li
+									><li
+										><code>em</code> (1em = 100% av
+										font-size på samme element)</li
+									><li
+										><code>ex</code> (Relative til høyde på
+										fonten som brukes (sjelden brukt))</li
+									><li
+										><code>ch</code> (Relativ til bredden av
+										tallet "0", bredden er forskjellig
+										avhengig av font)</li
+									><li
+										><code>rem</code> (%/100 av font-size på
+										"root"-elementet)</li
+									><li
+										><code>vw</code> (1vw = 1% av bredden på
+										nettleservinduet)</li
+									><li
+										><code>vh</code> (1vh = 1% av høyden på
+										nettleservinduet)</li
+									><li
+										><code>vmin</code> (1vmin = 1% av den
+										korteste siden på nettleservinduet)</li
+									><li
+										><code>vmax</code> (1vmax = 1% av den
+										lengste siden på nettleservinduet)</li
+									><li
+										><code>%</code> (Relativ til elementet
+										"over" også kjent som "parent
+										element")</li
+									></ul
+								></li
+							><li
+								>Prøv gjerne å endre skriftstørrelsen på en
+								<code>&lt;h2&gt;</code>,
+								<code>&lt;h3&gt;</code> og
+								<code>&lt;h4&gt;</code>-tittel med flere
+								forskjellige måleenheter. Se nøye på eksempelet
+								under for riktig formatering av koden.</li
+							><li
+								>F.eks: <code>h2 { font-size: 72px; }</code></li
+							></ul
+						></div
+					><div class="editor"
+						><span id="css-task-1" class="error-message"
+							>Koden er invalid. Prøv å sammenligne koden din med
+							eksempelet over.</span
+						>
+						<span
+							class="input"
+							id="cssFontsize"
+							oninput="checkLang(this)"
+							data-l="css"
+							data-p="font-size"
+							data-e="css-task-1"
+							contenteditable="true"
+							>h1 {<br />&nbsp;&nbsp;&nbsp;&nbsp;font-size:
+							48px;<br />}<br /><br />h2 {<br />&nbsp;&nbsp;&nbsp;&nbsp;
+							<br />}<br /><br />h3 {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />}<br /><br />h4
+							{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />}<br /><br />h5
+							{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />}<br /><br />h6
+							{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />}</span
+						></div
+					></div
+				><div class="row-2" id="cssOutput"
+					><h1 contenteditable="true" id="css-task-1-h1"
+						>Denne overskriften er størst, duh</h1
+					><h2 contenteditable="true" id="css-task-1-h2"
+						>°O° Alle overskriftene her kan endres °o°</h2
+					><h3 contenteditable="true" id="css-task-1-h3"
+						>Denne overskriften er laget med en &lt;h3&gt;</h3
+					><h4 contenteditable="true" id="css-task-1-h4"
+						>Mindre overskrifter enn dette brukes sjelden</h4
+					><h5 contenteditable="true" id="css-task-1-h5"
+						>Husk at en overskrift bør være tydelig og lettlest</h5
+					><h6 contenteditable="true" id="css-task-1-h6"
+						>De sier <q>size doesn't matter</q>, men dette blir for
+						lite</h6
+					></div
+				></div
+			></div
+		><!-- Endre font-family med CSS --><div class="row-item"
+			><div class="separator"><hr /><h3>2.2</h3><hr /></div
+			><div class="task-container"
+				><div class="row-1"
+					><div class="explanation"
+						><h2>Endre skrifttype på overskrifter med CSS</h2
+						><ul
+							><li
+								>Slik som forrige oppgaver må vi først velge
+								hvilket element vi vil endre standardverdi til
+								(<a
+									href="https://css-tricks.com/css-ruleset-terminology/"
+									>selector</a
+								>). I teksten nedenfor brukes
+								<code>&lt;h2&gt;</code> for overskrift og
+								<code>&lt;p&gt;</code> for brødtekst.</li
+							><li
+								>For å endre skifttype i CSS må vi gi
+								<code>font-family</code> en verdi.</li
+							><li
+								><code>font-family</code> støtter noe vi kaller
+								"fallback-verdier". Det vil si at hvis ikke
+								nettsiden klarer å laste inn en skrifttype for
+								eksempel hvis det er i feil format, eller
+								font-filen ikke finnes, vil den prøve å laste
+								inn neste verdi.</li
+							><li
+								>Hvis vi skriver
+								<code
+									>h2 { font-family: 'Lora', 'Times New
+									Roman', serif; }</code
+								>
+								vil nettsiden først prøve å sette skrifttypen
+								til <code>&lt;h2&gt;</code>-tittelen til
+								<code>'Lora'</code>, hvis denne ikke laster så
+								prøver den <code>'Times New Roman'</code>,
+								dersom denne også ikke skulle lastes inn vil den
+								falle tilbake til <code>serif</code>.
+								<code>serif</code> er en ikke en spesifikk font,
+								så den vil være annerledes på din PC, min PC og
+								vennene dine sine PCer.</li
+							><li
+								>Jeg har importert noen high-quality fonter du
+								kan benytte deg av i oppgaven:<ul
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Lora"
+											>Lora</a
+										>
+										(serif)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Merriweather"
+											>Merriweather</a
+										>
+										(serif)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Inter"
+											>Inter</a
+										>
+										(sans-serif)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Montserrat"
+											>Montserrat</a
+										>
+										(sans-serif)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Noto+Sans+Mono"
+											>Noto Sans Mono</a
+										>
+										(monospace)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/JetBrains+Mono"
+											>JetBrains Mono</a
+										>
+										(monospace)</li
+									><li
+										><a
+											href="https://fonts.google.com/specimen/Cousine"
+											>Cousine</a
+										>
+										(monospace)</li
+									></ul
+								>Du kan også velge i
+								nettleservalgte/nettlseserspesifikke
+								fallback-fonter som:<ul
+									><li><code>sans-serif</code></li
+									><li><code>serif</code></li
+									><li><code>monospace</code></li
+									><li><code>cursive</code></li
+									><li><code>fantasy</code></li
+									><li
+										><code>unset</code> (ingen verdi)</li
+									></ul
+								></li
+							><li
+								>Nå som du vet litt om hvordan man endrer
+								skrifttype i CSS kan du prøve å endre
+								skrifttypen på overskriften
+								(<code>&lt;h2&gt;</code>) til
+								<code>'Montserrat'</code> og brødteksten til
+								<code>'Noto Sans Mono'</code> med
+								<code>monospace</code> som fallback.</li
+							></ul
+						></div
+					><div class="editor"
+						><span id="css-task-2" class="error-message"
+							>Koden er invalid/feil. Gå gjennom koden og prøv å
+							finne ut av problemet selv!</span
+						>
+						<span
+							class="input"
+							id="cssFontfamily"
+							oninput="checkLang(this)"
+							data-l="css"
+							data-p="font-family"
+							data-e="css-task-2"
+							contenteditable="true"
+							>h2 {<br />&nbsp;&nbsp;&nbsp;&nbsp;font-family:
+							'Inter', sans-serif;&nbsp;&nbsp;&nbsp;<br />}<br /><br />p
+							{<br />&nbsp;&nbsp;&nbsp;&nbsp;font-family: 'Lora',
+							'Merriweather', serif;&nbsp;&nbsp;&nbsp;<br />}</span
+						></div
+					></div
+				><div class="row-2" id="cssOutput"
+					><h2 id="css-task-2-h2" contenteditable="true"
+						>Lorem Ipsum er Placeholder-tekst for de som ikke vet
+						hva de skal skrive 🤭</h2
+					><p id="css-task-2-p" contenteditable="true"
+						>Du kan skrive hva du vil her. Som default har jeg lagt
+						inn 200 ord med Lorem-Ipsum-placeholder-tekst Lorem
+						ipsum dolor sit amet consectetur adipisicing elit.
+						Possimus repellat, voluptate saepe aspernatur assumenda
+						porro tempora consequuntur, perspiciatis ex laboriosam
+						in esse nulla ut magni ipsam atque commodi distinctio
+						ullam sed sunt, vel deleniti amet molestias? Voluptates
+						omnis, rerum amet placeat harum ab minus reiciendis
+						eveniet perferendis quidem at consequuntur dolor ad
+						aspernatur, molestias voluptatibus quaerat culpa nobis
+						laboriosam neque. Odit, quia. Numquam cum ex ab odit
+						impedit ad voluptatem ipsa autem possimus rerum
+						doloremque consectetur et sit quisquam enim temporibus,
+						magni hic, recusandae aliquid, ducimus facere?
+						Voluptatum dolor veritatis consequatur aliquid
+						voluptate, atque architecto quisquam, cupiditate cumque
+						incidunt iusto fugit aliquam quasi! Nisi facere quod
+						recusandae a, in officiis necessitatibus unde pariatur.
+						Laboriosam, id hic recusandae accusamus saepe explicabo
+						quisquam necessitatibus illo voluptates asperiores vero
+						deleniti minima nam aperiam architecto, repellendus
+						perspiciatis ipsum error mollitia aliquid distinctio
+						similique reiciendis ducimus! Deserunt incidunt unde
+						nesciunt blanditiis, facere repellat velit mollitia
+						sint. Molestias voluptates dolorum magni numquam, odit
+						eum doloribus sequi dolores voluptatem aliquam ratione
+						pariatur. Molestias nostrum enim saepe fugit soluta,
+						esse, porro expedita eos at pariatur itaque magni
+						maiores omnis eaque doloremque. Culpa voluptas aperiam
+						ad minima labore earum eligendi nisi error ab harum,
+						molestias ea, corrupti tempore dolores.</p
+					></div
+				></div
+			></div
+		></body
+	></html
+>

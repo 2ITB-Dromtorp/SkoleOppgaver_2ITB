@@ -7,11 +7,21 @@ export default function Elev(props) {
 
     const navigate = useNavigate();
 
+    /*aconst checkPath = () => {
+        if (name in list_of_students) {
+            navigate(path);
+        } else {
+            console.log('Student dont exist')
+        }
+    } */
+
     return (
 
-        
-       
-            <div className='elev' onClick={() => navigate(path)}> {name} </div>
+
+            <div className='elev' onClick={() => 
+                navigate(path)}> {name} </div>
+
+            
             
         
         
