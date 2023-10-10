@@ -7,15 +7,13 @@ export default function Profile() {
 
     let profileParams = useParams();
 
-    console.log(profileParams);
-
     return (
         <>
         <div className='profile-container'>
 
         <div className='profile-box'>
 
-            <h1> Dette er profilen til eleven </h1>
+            <h1> Dette er profilen til {profileParams.profile} </h1>
             <button onClick={() => navigate(-1)}> Tilbake til hovedmeny </button>
 
         </div>

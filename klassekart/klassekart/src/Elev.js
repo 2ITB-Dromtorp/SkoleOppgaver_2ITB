@@ -21,8 +21,6 @@ export default function Elev(props) {
             <div className='elev' onClick={() => 
                 navigate(path)}> {name} </div>
 
-            
-            
         
         
     )
