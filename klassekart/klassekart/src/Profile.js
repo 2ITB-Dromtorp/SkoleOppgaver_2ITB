@@ -1,6 +1,23 @@
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
+let json = {
+    "elever" : [
+        {
+          "navn" : "andreas",
+          "alder" : "17",
+          "email": "andreask@viken.no",
+          "Tlf": 90918378
+        },
+        {
+            "navn" : "Ahmad",
+            "alder" : "17",
+            "email": "ahmad@viken.no",
+            "Tlf": 90918728
+          } 
+      ]
+}
+
 export default function Profile() {
 
     const navigate = useNavigate();

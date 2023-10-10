@@ -22,6 +22,5 @@ export default function Elev(props) {
                 navigate(path)}> {name} </div>
 
         
-        
     )
 }
