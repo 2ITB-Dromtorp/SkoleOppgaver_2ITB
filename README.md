@@ -9,5 +9,5 @@ Dette repositoriet inneholder oppgaver for 2ITB. Clone dette repositoriet i ditt
 | 36 - 39  | Grunnleggende programmering og brukergrensesnitt     |
 | 40  | Høstferie    |
 | 40 -  | Utforskning I NodeJS. Lage en enkel database-app.​ Utforske ulike databaser. IT - Sikkerhet   |
-| 42 -  | Praksis og nodeJS    |
-| 46 - Jul | Samleprosjekt før jul med hva vi har lært   |
+| 42 -  | Praksis og nodeJS og React   |
+| 48 - Jul | Samleprosjekt/prøve før jul med hva vi har lært   |
