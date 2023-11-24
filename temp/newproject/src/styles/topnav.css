@@ -1,0 +1,134 @@
+body {
+    background-color: #373F51;
+}
+
+.Header {
+    display: flex;
+    background-color: #1B1B1E;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.SearchBar {
+    border: 5px #1B1B1E;
+    padding: 1vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 40%;
+    margin: auto;
+}
+
+.resultImage {
+    height: 11vw;
+    width: 16vw;
+    cursor: pointer;
+}
+
+.resultContainer {
+    width: 50%;
+    max-height: 15vw;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.result {
+    background-color: #1B1B1E;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.resultTitle {
+    display: flex;
+    font-size: 2vw;
+    margin-left: 15px;
+    cursor: pointer;
+    color: #D8DBE2;
+}
+
+.resultDate {
+    display: flex;
+    margin-left: 15px;
+    font-size: 2.5vh;
+    cursor: pointer;
+    color: #D8DBE2;
+}
+
+.resultTime {
+    display: flex;
+    margin-left: 15px;
+    font-size: 2.5vh;
+    cursor: pointer;
+    color: #D8DBE2;
+}
+
+.openbtn {
+    height: 4vw;
+    width: 4vw;
+    margin: 2%;
+    border-radius: 100%;
+    border-color: black;
+}
+
+.accountbtn {
+    height: 4vw;
+    width: 4vw;
+    margin: 2%;
+    border-radius: 100%;
+    border-color: black;
+}
+
+.sidepanel {
+    height: 100%; 
+    width: 0;
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #1B1B1E; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidepanel a:hover {
+    color: #32936F;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+  
+.openbtn:hover {
+    background-color: #444;
+}
+
