@@ -1,0 +1,25 @@
+.table-container {
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px; /* Smaller padding */
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em; /* Adjust font size as needed */
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 6px; /* Smaller padding */
+    text-align: center;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}

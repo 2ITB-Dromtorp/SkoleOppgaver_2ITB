@@ -1,78 +1,52 @@
-:root {
-  --primary: #000000;
-  --button: #3a0057;
-  --buttonHoverBorder: #ffffff;
-  --textcolor:#ffffff;
-  --containerBorder:#ffffff;
- 
+*{
+  overflow: hidden;
 }
 
-body{
-  background-color: var(--primary);
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.buttonContainer {
+.navbar{
   display: flex;
-  border: solid var(--containerBorder);
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: #d87093;
+  color: white; 
+  position: sticky;
+  top: 0;
 }
 
-.requestContainer {
-  border: solid var(--containerBorder);
+.mainbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.button {
-  background-color: var(--button);
-  width: 80%;
-  height: 10rem;
-  margin: 20px;
+.content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+  border: solid black 1px;
   font-size: 2em;
+}
+
+button{
+  width: 10%;	
+  height: 80%;
+  background-color: #d87093;
   color: white;
+  border: solid pink 1px;
 }
-
-.button:hover{
-  border: solid var(--buttonHoverBorder);
-}
-h1{
-  color: var(--textcolor) ;
-}
-
-
