@@ -6,10 +6,10 @@ export default function Select() {
     const [elevData, setElevData] = useState([]);
 
     useEffect(() => {
-        getCustomersData();
+        getElevData();
     }, []);
 
-    const getCustomersData = () => {
+    const getElevData = () => {
         axios
             .get("http://localhost:3000/")
             .then(response => {
@@ -35,15 +35,15 @@ export default function Select() {
                     </tr>
                 </thead>
                 <tbody>
-                    {elevData.map(customer => (
-                        <tr key={customer.ElevID}>
-                            <td>{customer.ElevID}</td>
-                            <td>{customer.Fornavn}</td>
-                            <td>{customer.Etternavn}</td>
-                            <td>{customer.DatamaskinID}</td>
-                            <td>{customer.Hobby}</td>
-                            <td>{customer.Klasse}</td>
-                            <td>{customer.Kjonn}</td>
+                    {elevData.map(elev => (
+                        <tr key={elev.ElevID}>
+                            <td>{elev.ElevID}</td>
+                            <td>{elev.Fornavn}</td>
+                            <td>{elev.Etternavn}</td>
+                            <td>{elev.DatamaskinID}</td>
+                            <td>{elev.Hobby}</td>
+                            <td>{elev.Klasse}</td>
+                            <td>{elev.Kjonn}</td>
                         </tr>
                     ))}
                 </tbody>
