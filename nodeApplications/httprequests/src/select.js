@@ -49,6 +49,6 @@ export default function Select() {
                 </tbody>
             </table>
         </div>
-        </>
+    </>
     );
 }
