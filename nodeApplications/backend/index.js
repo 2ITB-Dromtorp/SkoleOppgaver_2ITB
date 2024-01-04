@@ -43,10 +43,10 @@ app.get("/updateuser/:newhobby/:id", (request, response) => {
 
   connection.query(sqlquery, [newhobby, id], function (error, results, fields) {
     if (error) throw error;
-    response.send(JSON.stringify(results));
+    response.send('If This works, great!');
   });
 
-  response.send('If This works, great!');
+
   
 })
 
