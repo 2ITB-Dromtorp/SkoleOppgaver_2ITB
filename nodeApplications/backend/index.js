@@ -35,6 +35,8 @@ app.get('/', (request, response) => {
 })
 
 app.get("/updateuser/:newhobby/:id", (request, response) => {
+
+  //http://localhost:3000/updateuser/karate/12
   
   let newhobby = request.params.newhobby;
   let id = request.params.id;
