@@ -7,8 +7,8 @@ export default function Login() {
  
  
     function handleSubmit(event) {
-        event.preventDefault();
-        console.log('Submitted')
+        event.preventDefault(); //Hindrer at du blir kastet ut, eller at siden restarter. 
+        console.log('Submitted');
     }
  
     return (
@@ -19,7 +19,7 @@ export default function Login() {
             <label> Brukernavn </label>
             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
             <label>Last name:</label>
-            <input type="text" value="Doe" onChange={(e) => setPassword(e.target.value)}/>
+            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <input type="submit" value="Logg inn"/>
         </form>
  
