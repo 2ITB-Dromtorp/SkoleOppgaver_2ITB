@@ -7,7 +7,8 @@ app.use(express.static("build"));
 app.get('/frontpage/:navn', (req, res) => {
 
   let navn = req.params.navn;
-  
+  //This is an important comment
+
   //http://localhost:8080/frontpage/Joakim -> vg
   //http://localhost:8080/frontpage/Ahmad -> nrk
   if (navn == 'Ahmad') {
